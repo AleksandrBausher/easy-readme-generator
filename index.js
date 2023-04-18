@@ -77,14 +77,34 @@ function createReadme(
   license
 ) {
   var readme = `
+# Title ![badge](https://img.shields.io/badge/license-${license}-blue)
 ${title}
+
+# Description
 ${description}
-${installation}
-${usage}
-${contribution}
-[${email}](mailto:${email})
-[${github}](https://github.com/${github})  
-${license}
+
+# Table of contents \n\n
+    * [Instructions](#instructions)
+    * [Usage](#usage)
+    * [Contribution](#contribution)
+    * [GitHub](#github)
+    * [Email](#email)
+    * [License](#license)\n\n
+   
+# Instructions 
+    ${installation}
+# Usage
+    ${usage}
+# Contribution
+    ${contribution}
+# Questions
+    My Email: 
+        [${email}](mailto:${email})
+    My Github:
+        [${github}](https://github.com/${github})
+   
+# License
+    ${license}
 `;
   return readme;
 }
