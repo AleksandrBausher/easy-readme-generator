@@ -65,8 +65,8 @@ async function init() {
     userAnswers.github,
     userAnswers.license
   );
-  fs.writeFile("readme.md", readme, (err) =>
-      err ? console.log(err) : console.log("Success!")
+  fs.writeFile("generatedReadme.md", readme, (err) =>
+      err ? console.log(err) : console.log("Successful")
     );
 }
 
@@ -97,19 +97,21 @@ ${description}
 * [License](#license)\n\n
    
 # Instructions 
-    ${installation}
+${installation}
 # Usage
-    ${usage}
+${usage}
 # Contribution
-    ${contribution}
+${contribution}
 # Questions
-    My Email: 
-        [${email}](mailto:${email})
-    My Github:
-        [${github}](https://github.com/${github})
-   
+
+My Email:<br> 
+[${email}](mailto:${email})
+
+My Github:<br>
+[${github}](https://github.com/${github})
+
 # License
-    ${license}
+${license}
 `;
   return readme;
 }
