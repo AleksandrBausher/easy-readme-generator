@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+
 const questions = [
   {
     type: "input",
@@ -14,7 +15,7 @@ const questions = [
   },
   {
     type: "input",
-    name: "istallation",
+    name: "installation",
     message: "Installation instructions: ",
   },
 
@@ -51,6 +52,7 @@ const questions = [
   },
 ];
 
+
 async function init() {
   var userAnswers = await inquirer.prompt(questions);
   var readme = createReadme(
@@ -63,8 +65,11 @@ async function init() {
     userAnswers.github,
     userAnswers.license
   );
-  console.log(readme);
+  fs.writeFile("readme.md", readme, (err) =>
+      err ? console.log(err) : console.log("Success!")
+    );
 }
+
 
 function createReadme(
   title,
@@ -84,12 +89,12 @@ ${title}
 ${description}
 
 # Table of contents \n\n
-    * [Instructions](#instructions)
-    * [Usage](#usage)
-    * [Contribution](#contribution)
-    * [GitHub](#github)
-    * [Email](#email)
-    * [License](#license)\n\n
+* [Instructions](#instructions)
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [GitHub](#github)
+* [Email](#email)
+* [License](#license)\n\n
    
 # Instructions 
     ${installation}
