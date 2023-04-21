@@ -1,9 +1,9 @@
 
 # Title ![badge](https://img.shields.io/badge/license-MIT-blue)
-Readme Generator
+sample title
 
 # Description
-This is an easy readme generator that can be used for every project to generate beautiful readme easily
+sample of project
 
 # Table of contents 
 
@@ -17,11 +17,11 @@ This is an easy readme generator that can be used for every project to generate 
 
    
 # Instructions 
-run the command npm i and then node index and asnwer all the questions
+sample installation
 # Usage
-Use it freely just do not forget to give credits
+sample usage
 # Contribution
-Application was created by Aleksandr Bausher and if you want to contribute send me email.
+sample guidelines
 # Questions
 
 My Email:<br> 
