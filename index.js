@@ -1,7 +1,8 @@
+//importing modules
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-
+//questions array
 const questions = [
   {
     type: "input",
@@ -52,7 +53,7 @@ const questions = [
   },
 ];
 
-
+//init async function
 async function init() {
   var userAnswers = await inquirer.prompt(questions);
   var readme = createReadme(
@@ -65,12 +66,13 @@ async function init() {
     userAnswers.github,
     userAnswers.license
   );
-  fs.writeFile("generatedReadme.md", readme, (err) =>
+//writing in the readme.md file
+fs.writeFile("generatedReadme.md", readme, (err) =>
       err ? console.log(err) : console.log("Successful")
-    );
+);
 }
 
-
+//creating string to add to the readme.md file
 function createReadme(
   title,
   description,
@@ -82,7 +84,7 @@ function createReadme(
   license
 ) {
   var readme = `
-# Title ![badge](https://img.shields.io/badge/license-${license}-blue)
+# Title ![badge](https://img.shields.io/badge/license-${license.replace(/\s/g, '--') }-blue)
 ${title}
 
 # Description
@@ -92,8 +94,7 @@ ${description}
 * [Instructions](#instructions)
 * [Usage](#usage)
 * [Contribution](#contribution)
-* [GitHub](#github)
-* [Email](#email)
+* [Questions](#questions)
 * [License](#license)\n\n
    
 # Instructions 
